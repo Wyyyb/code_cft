@@ -164,6 +164,7 @@ def get_qwen3_question_template_answer(question: CodeGenerationProblem):
         prompt += f"{PromptConstants.FORMATTING_WITHOUT_STARTER_CODE}\n"
         prompt += f"```python\n# YOUR CODE HERE\n```\n\n<|im_end|>\n"
     prompt += f"<|im_start|>assistant\n"
+    print("qwen3 prompt:\n", prompt)
     return prompt
 
 
