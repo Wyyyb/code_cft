@@ -1,0 +1,7 @@
+local/
+data_bk/
+corpus_data/
+local_*/
+.idea/
+__pycache__
+local_*
