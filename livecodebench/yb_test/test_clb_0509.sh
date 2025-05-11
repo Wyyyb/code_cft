@@ -12,7 +12,7 @@ python -m lcb_runner.runner.main \
     --evaluate \
     --release_version release_v5 \
     --n 1 \
-    ----codegen_n 1 \
+    --codegen_n 1 \
     --custom_output_file ./output_result/Qwen3-4B_0511/
 
 
