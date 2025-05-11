@@ -13,7 +13,7 @@ python -m lcb_runner.runner.main \
     --release_version release_v5 \
     --n 1 \
     ----codegen_n 1 \
-    --output_dir ./output_result/Qwen3-4B_0511/
+    --custom_output_file ./output_result/Qwen3-4B_0511/
 
 
 
