@@ -155,7 +155,7 @@ def get_qwen_qwq_question_template_answer(question: CodeGenerationProblem):
 
 
 def get_qwen3_question_template_answer(question: CodeGenerationProblem):
-    prompt = "You will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests.\n\n"
+    prompt = "<|im_start|>user\nYou will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests.\n\n"
     prompt += f"Question: {question.question_content}\n\n"
     if question.starter_code:
         prompt += f"{PromptConstants.FORMATTING_MESSAGE_WITH_STARTER_CODE}\n"
