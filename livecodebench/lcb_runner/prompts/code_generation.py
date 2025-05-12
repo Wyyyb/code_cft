@@ -348,7 +348,7 @@ def format_prompt_generation(
 
     if LanguageModelStyle == LMStyle.Qwen3:
         prompt = f"{PromptConstants.SYSTEM_MESSAGE_QWEN3}\n\n"
-        prompt += f"{get_qwen_qwq_question_template_answer(question)}"
+        prompt += f"{get_qwen3_question_template_answer(question)}"
         return prompt
 
     if LanguageModelStyle == LMStyle.DeepSeekR1:
