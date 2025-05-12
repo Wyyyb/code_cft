@@ -25,7 +25,7 @@ class PromptConstants:
 
     SYSTEM_MESSAGE_QWEN_QWQ = f"<|im_start|>system\nYou are a helpful and harmless assistant. You are Qwen developed by Alibaba. You should think step-by-step.<|im_end|>\n<|im_start|>user"
 
-    SYSTEM_MESSAGE_QWEN3 = f"<|im_start|>user"
+    SYSTEM_MESSAGE_QWEN3 = f"<|im_start|>user\n"
 
     SYSTEM_MESSAGE_DEEPSEEK_R1 = (
         "<｜begin▁of▁sentence｜>A conversation between User and Assistant. "
@@ -155,7 +155,7 @@ def get_qwen_qwq_question_template_answer(question: CodeGenerationProblem):
 
 
 def get_qwen3_question_template_answer(question: CodeGenerationProblem):
-    prompt = "<|im_start|>user\nYou will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests.\n\n"
+    prompt = "You will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests.\n\n"
     prompt += f"Question: {question.question_content}\n\n"
     if question.starter_code:
         prompt += f"{PromptConstants.FORMATTING_MESSAGE_WITH_STARTER_CODE}\n"
@@ -164,7 +164,6 @@ def get_qwen3_question_template_answer(question: CodeGenerationProblem):
         prompt += f"{PromptConstants.FORMATTING_WITHOUT_STARTER_CODE}\n"
         prompt += f"```python\n# YOUR CODE HERE\n```\n\n<|im_end|>\n"
     prompt += f"<|im_start|>assistant\n"
-    print("qwen3 prompt:\n", prompt)
     return prompt
 
 
@@ -349,6 +348,7 @@ def format_prompt_generation(
     if LanguageModelStyle == LMStyle.Qwen3:
         prompt = f"{PromptConstants.SYSTEM_MESSAGE_QWEN3}\n\n"
         prompt += f"{get_qwen3_question_template_answer(question)}"
+        print("qwen3 prompt:\n")
         return prompt
 
     if LanguageModelStyle == LMStyle.DeepSeekR1:
