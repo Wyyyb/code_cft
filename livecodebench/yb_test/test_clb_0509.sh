@@ -13,7 +13,9 @@ python -m lcb_runner.runner.main \
     --release_version release_v5 \
     --n 1 \
     --codegen_n 1 \
-    --custom_output_file ./output_result/Qwen3-4B_0511/
+    --start_date 2024-12-01 \
+    --end_data 2025-02-01
+
 
 
 
